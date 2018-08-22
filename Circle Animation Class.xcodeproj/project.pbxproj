@@ -54,11 +54,11 @@
 		0D3FDDDC212DA94F00EF1E78 /* Circle Animation Class */ = {
 			isa = PBXGroup;
 			children = (
-				0D3FDDDD212DA94F00EF1E78 /* AppDelegate.swift */,
-				0D3FDDDF212DA94F00EF1E78 /* ViewController.swift */,
 				0D3FDDE1212DA94F00EF1E78 /* Main.storyboard */,
+				0D3FDDDF212DA94F00EF1E78 /* ViewController.swift */,
 				0D3FDDE4212DA95100EF1E78 /* Assets.xcassets */,
 				0D3FDDE6212DA95100EF1E78 /* LaunchScreen.storyboard */,
+				0D3FDDDD212DA94F00EF1E78 /* AppDelegate.swift */,
 				0D3FDDE9212DA95100EF1E78 /* Info.plist */,
 			);
 			path = "Circle Animation Class";
