@@ -18,15 +18,10 @@ class ViewController: UIViewController {
     
     var toggleCircle:Bool = false
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(true)
-        
-    }
-    
     @IBAction func buttonWasPressed(_ sender: UIButton) {
         
         toggleCircle ? buttonText.setTitle("stop", for: .normal) : buttonText.setTitle("animate", for: .normal)
-        toggleCircle ? animateCircle.startUp(viewToModel: circleView, toggle: toggleCircle) : animateCircle.startUp(viewToModel: circleView, toggle: toggleCircle)
+        toggleCircle ? animateCircle.startUp(viewToModel: circleView, toggleStop: toggleCircle) : animateCircle.startUp(viewToModel: circleView, toggleStop: toggleCircle)
         toggleCircle = toggleCircle ? false : true
     }
 }
@@ -37,9 +32,9 @@ class AnimateCircle {
     let animation = CABasicAnimation(keyPath: "strokeEnd")
     let fadeAnimation = CABasicAnimation(keyPath: "opacity")
     
-    func startUp(viewToModel:UIView, toggle:Bool) {
+    func startUp(viewToModel:UIView, toggleStop:Bool) {
         
-        if toggle {
+        if toggleStop {
             outerRimLayer.removeAnimation(forKey: "drawLineAnimation")
             outerRimLayer.removeAnimation(forKey: "FadeAnimation")
             outerRimLayer.removeFromSuperlayer()
@@ -73,7 +68,6 @@ class AnimateCircle {
         fadeAnimation.duration = 4.0
         fadeAnimation.repeatCount = Float.greatestFiniteMagnitude
         outerRimLayer.add(fadeAnimation, forKey: "FadeAnimation")
-        
     }
 }
 
